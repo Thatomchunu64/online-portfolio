@@ -553,21 +553,24 @@ const Home = () => {
 			<footer
 				style={{
 					width: "100%",
-					background: "#e0f2fe",
+					background: "linear-gradient(90deg, #e0f2fe 60%, #bae6fd 100%)",
 					padding: "24px 0 12px 0",
 					marginTop: 48,
 					textAlign: "center",
 					fontSize: 15,
-					color: "#111", // black text
+					color: "#111",
 					borderTop: "1px solid #bae6fd",
+					boxShadow: "0 -2px 16px #bae6fd44",
+					position: "relative",
+					zIndex: 10,
 				}}
 				className="mt-12">
-				<div className="flex flex-col items-center gap-2">
-					<div>
+				<div className="flex flex-col md:flex-row items-center justify-between gap-2 max-w-4xl mx-auto px-4">
+					<div className="text-sm md:text-base text-gray-700 font-medium">
 						&copy; {new Date().getFullYear()} Thato Mchunu. Built with React.
 						All rights reserved.
 					</div>
-					<div className="flex gap-8 justify-center mt-1">
+					<div className="flex gap-6 justify-center items-center mt-2 md:mt-0">
 						<a
 							href="#home"
 							aria-label="Back to Top"
@@ -575,7 +578,8 @@ const Home = () => {
 								color: "#0ea5e9",
 								fontSize: 18,
 								textDecoration: "underline",
-								marginRight: 12,
+								marginRight: 0,
+								fontWeight: 600,
 							}}
 							className="hover:text-blue-700 focus:text-blue-900">
 							Back to Top

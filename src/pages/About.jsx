@@ -251,7 +251,7 @@ const About = () => {
 						</div>
 					</div>
 				</div>
-				{/* Download Resume button, full width on mobile */}
+				{/* Download Resume button, full width on mobile, auto on desktop */}
 				<a
 					href="/resume.pdf"
 					download
@@ -268,7 +268,10 @@ const About = () => {
 						width: "100%",
 						maxWidth: 320,
 						textAlign: "center",
-					}}>
+						boxSizing: "border-box",
+						boxShadow: "0 2px 12px #0ea5e933",
+					}}
+					className="sm:w-auto w-full">
 					Download Resume
 				</a>
 			</div>
