@@ -452,14 +452,12 @@ const Home = () => {
 						transition={{ delay: 0.2, duration: 0.7 }}
 						className="flex-1 mb-4 sm:mb-0">
 						<h3 className="font-bold text-xl mb-2 text-black">
-							Portfolio Website
+							E-Commerce Store
 						</h3>
 						<p className="text-gray-700 text-base mb-3">
-							A modern, responsive portfolio built with React, Vite, and
-							Tailwind CSS. Features an animated hero, clean design, and
-							accessible layout.
+							A full-featured e-commerce web app with shopping cart, payments,
+							and admin dashboard.
 						</p>
-						{/* Use Link for SPA navigation */}
 						<Link
 							to="/projects"
 							style={{
@@ -480,7 +478,6 @@ const Home = () => {
 							}}
 							aria-label="View Projects"
 							className="hover:bg-blue-700 focus:bg-blue-800">
-							<FaReact className="inline-block text-lg mb-0.5 animate-spin-slow" />
 							<span>View Projects</span>
 						</Link>
 					</motion.div>
@@ -490,42 +487,23 @@ const Home = () => {
 						viewport={{ once: true }}
 						transition={{ delay: 0.3, duration: 0.7 }}
 						className="flex-1 flex justify-center items-center">
-						<div className="relative w-[160px] h-[120px] group [perspective:600px]">
+						<div className="relative w-[160px] h-[120px] group [perspective:600px] flex items-center justify-center">
 							<motion.div
 								whileHover={{ rotateY: 12, rotateX: 8, scale: 1.05 }}
 								transition={{ type: "spring", stiffness: 200, damping: 15 }}
-								className="relative w-full h-full rounded-2xl shadow-lg bg-gradient-to-br from-blue-100 via-white to-cyan-100 overflow-hidden border-2 border-blue-200">
-								<svg
-									width="160"
-									height="120"
-									viewBox="0 0 160 120"
-									fill="none"
-									xmlns="http://www.w3.org/2000/svg"
-									aria-label="Project Preview"
-									className="rounded-xl shadow-lg">
-									<rect width="160" height="120" rx="22" fill="#e0f2fe" />
-									<rect
-										x="45"
-										y="45"
-										width="70"
-										height="30"
-										rx="8"
-										fill="#fff"
-										stroke="#0ea5e9"
-										strokeWidth="2"
-									/>
-									<rect
-										x="60"
-										y="65"
-										width="40"
-										height="12"
-										rx="4"
-										fill="#38bdf8"
-									/>
-									<circle cx="80" cy="70" r="10" fill="#38bdf8" />
-								</svg>
+								className="relative w-full h-full rounded-2xl shadow-lg bg-gradient-to-br from-blue-100 via-white to-cyan-100 overflow-hidden border-2 border-blue-200 flex items-center justify-center">
+								<img
+									src="/images/e-commerce.jpg"
+									alt="E-Commerce Store Preview"
+									style={{
+										width: "100%",
+										height: "100%",
+										objectFit: "cover",
+										borderRadius: 16,
+										boxShadow: "0 2px 12px #0ea5e933",
+									}}
+								/>
 								<div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-400/30 to-cyan-200/20 opacity-0 group-hover:opacity-80 transition-all duration-300 flex items-center justify-center">
-									{/* Use Link for SPA navigation */}
 									<Link
 										to="/projects"
 										style={{
