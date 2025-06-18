@@ -148,17 +148,17 @@ const Home = () => {
 						...ctaRow,
 						flexDirection: "column",
 						alignItems: "center",
-						gap: 8,
+						gap: 12,
 						width: "100%",
-						maxWidth: 400,
-						margin: "0 auto",
+						maxWidth: 340,
+						margin: "0 auto 8px auto",
 					}}
-					className="flex flex-col sm:flex-row flex-wrap gap-2 justify-center items-center w-full max-w-xl mx-auto mb-2">
+					className="flex flex-col gap-3 w-full max-w-xs mx-auto mb-2">
 					{/* Use Link for internal navigation to prevent 404 on static hosts */}
 					<motion.div
 						whileHover={{ scale: 1.07 }}
 						whileTap={{ scale: 0.97 }}
-						style={{ width: "100%", marginBottom: 6 }}>
+						style={{ width: "100%" }}>
 						<Link
 							to="/projects"
 							style={{
@@ -167,7 +167,6 @@ const Home = () => {
 								color: "#fff",
 								border: "none",
 								outline: "2px solid transparent",
-								minWidth: 120,
 								width: "100%",
 								textAlign: "center",
 								boxShadow: "none",
@@ -181,7 +180,7 @@ const Home = () => {
 					<motion.div
 						whileHover={{ scale: 1.07 }}
 						whileTap={{ scale: 0.97 }}
-						style={{ width: "100%", marginBottom: 6 }}>
+						style={{ width: "100%" }}>
 						<Link
 							to="/contact"
 							style={{
@@ -189,7 +188,6 @@ const Home = () => {
 								color: "#0ea5e9",
 								border: "2px solid #0ea5e9",
 								outline: "2px solid transparent",
-								minWidth: 120,
 								width: "100%",
 								textAlign: "center",
 								boxShadow: "none",
@@ -211,13 +209,14 @@ const Home = () => {
 							color: "#0ea5e9",
 							border: "2px solid #0ea5e9",
 							outline: "2px solid transparent",
-							minWidth: 120,
 							width: "100%",
 							textAlign: "center",
 							boxShadow: "none",
-							marginBottom: 6,
+							padding: "12px 28px",
+							marginBottom: 0,
+							textDecoration: "none",
 						}}
-						className="transition-colors duration-200 hover:bg-blue-50 hover:text-blue-700 focus:outline-blue-400 mb-2 sm:mb-0"
+						className="transition-colors duration-200 hover:bg-blue-50 hover:text-blue-700 focus:outline-blue-400"
 						aria-label="View CV">
 						View CV
 					</motion.a>
@@ -232,11 +231,12 @@ const Home = () => {
 							color: "#0ea5e9",
 							border: "2px solid #0ea5e9",
 							outline: "2px solid transparent",
-							minWidth: 120,
 							width: "100%",
 							textAlign: "center",
 							boxShadow: "none",
+							padding: "12px 28px",
 							marginBottom: 0,
+							textDecoration: "none",
 						}}
 						className="transition-colors duration-200 hover:bg-blue-50 hover:text-blue-700 focus:outline-blue-400"
 						aria-label="View Cover Letter">
