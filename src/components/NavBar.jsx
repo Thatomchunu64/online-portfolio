@@ -20,6 +20,17 @@ const navLinks = [
 
 const NavBar = () => {
 	const location = useLocation();
+	const [menuOpen, setMenuOpen] = React.useState(false);
+	const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+
+	React.useEffect(() => {
+		const handleResize = () => {
+			if (window.innerWidth >= 768) setMenuOpen(false);
+		};
+		window.addEventListener("resize", handleResize);
+		return () => window.removeEventListener("resize", handleResize);
+	}, []);
+
 	return (
 		<nav
 			style={{
@@ -45,45 +56,92 @@ const NavBar = () => {
 					style={{
 						fontWeight: 700,
 						fontSize: 22,
-						color: "#0ea5e9", // blue
+						color: "#0ea5e9",
 						letterSpacing: 2,
 					}}>
 					Thato Mchunu
 				</span>
+				{/* Hamburger menu for mobile */}
+				<button
+					aria-label="Toggle navigation menu"
+					onClick={() => setMenuOpen((open) => !open)}
+					style={{
+						display: isMobile ? "block" : "none",
+						background: "none",
+						border: "none",
+						fontSize: 28,
+						cursor: "pointer",
+						marginLeft: 12,
+					}}>
+					<span
+						style={{
+							display: "block",
+							width: 28,
+							height: 3,
+							background: "#0ea5e9",
+							margin: "6px 0",
+						}}
+					/>
+					<span
+						style={{
+							display: "block",
+							width: 28,
+							height: 3,
+							background: "#0ea5e9",
+							margin: "6px 0",
+						}}
+					/>
+					<span
+						style={{
+							display: "block",
+							width: 28,
+							height: 3,
+							background: "#0ea5e9",
+							margin: "6px 0",
+						}}
+					/>
+				</button>
 				<ul
 					style={{
-						display: "flex",
-						gap: 18,
+						display: isMobile ? (menuOpen ? "flex" : "none") : "flex",
+						flexDirection: isMobile ? "column" : "row",
+						gap: isMobile ? 0 : 18,
 						listStyle: "none",
 						margin: 0,
 						padding: 0,
+						position: isMobile ? "absolute" : "static",
+						top: 56,
+						right: 0,
+						background: isMobile ? "#fff" : "none",
+						width: isMobile ? "100vw" : "auto",
+						boxShadow: isMobile && menuOpen ? "0 4px 16px #bae6fd55" : "none",
+						zIndex: 200,
 					}}>
 					{navLinks.map((link) => {
 						const Icon = link.icon;
 						const isActive = location.pathname === link.path;
 						return (
-							<li key={link.name}>
+							<li key={link.name} style={{ width: isMobile ? "100%" : "auto" }}>
 								<Link
 									to={link.path}
+									onClick={() => isMobile && setMenuOpen(false)}
 									style={{
 										display: "flex",
 										alignItems: "center",
 										gap: 6,
 										textDecoration: "none",
-										color: isActive ? "#0ea5e9" : "#222", // blue for active
+										color: isActive ? "#0ea5e9" : "#222",
 										fontWeight: 500,
 										fontSize: 15,
-										padding: "6px 10px",
+										padding: isMobile ? "16px 20px" : "6px 10px",
 										borderRadius: 6,
-										background: isActive ? "#e0f2fe" : "transparent", // light blue for active
+										background: isActive ? "#e0f2fe" : "transparent",
 										transition: "background 0.2s, color 0.2s",
+										width: isMobile ? "100%" : "auto",
+										justifyContent: isMobile ? "flex-start" : "center",
 									}}>
 									<Icon
-										style={{
-											width: 18,
-											height: 18,
-											verticalAlign: "middle",
-										}}
+										style={{ width: 18, height: 18, verticalAlign: "middle" }}
 									/>
 									<span>{link.name}</span>
 								</Link>
