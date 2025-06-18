@@ -493,7 +493,7 @@ const Home = () => {
 								transition={{ type: "spring", stiffness: 200, damping: 15 }}
 								className="relative w-full h-full rounded-2xl shadow-lg bg-gradient-to-br from-blue-100 via-white to-cyan-100 overflow-hidden border-2 border-blue-200 flex items-center justify-center">
 								<img
-									src="/images/e-commerce.jpg"
+									src="/images/E-Commerce.jpg"
 									alt="E-Commerce Store Preview"
 									style={{
 										width: "100%",
