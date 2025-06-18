@@ -29,6 +29,7 @@ import {
 	MdAccessibility,
 } from "react-icons/md";
 import { BsFillPeopleFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 import {
 	heroSection,
 	heroCard,
@@ -153,46 +154,52 @@ const Home = () => {
 						margin: "0 auto",
 					}}
 					className="flex flex-col sm:flex-row flex-wrap gap-2 justify-center items-center w-full max-w-xl mx-auto mb-2">
-					{/* Each button is full width on mobile, inline on desktop */}
-					<motion.a
+					{/* Use Link for internal navigation to prevent 404 on static hosts */}
+					<motion.div
 						whileHover={{ scale: 1.07 }}
 						whileTap={{ scale: 0.97 }}
-						href="/projects"
-						style={{
-							...ctaBtn,
-							background: "linear-gradient(90deg, #38bdf8 0%, #0ea5e9 100%)",
-							color: "#fff",
-							border: "none",
-							outline: "2px solid transparent",
-							minWidth: 120,
-							width: "100%",
-							textAlign: "center",
-							boxShadow: "none",
-							marginBottom: 6,
-						}}
-						className="transition-colors duration-200 hover:bg-blue-700 focus:outline-blue-400 mb-2 sm:mb-0"
-						aria-label="View Portfolio Projects">
-						View Portfolio Projects
-					</motion.a>
-					<motion.a
+						style={{ width: "100%", marginBottom: 6 }}>
+						<Link
+							to="/projects"
+							style={{
+								...ctaBtn,
+								background: "linear-gradient(90deg, #38bdf8 0%, #0ea5e9 100%)",
+								color: "#fff",
+								border: "none",
+								outline: "2px solid transparent",
+								minWidth: 120,
+								width: "100%",
+								textAlign: "center",
+								boxShadow: "none",
+								padding: "12px 28px",
+								textDecoration: "none",
+							}}
+							aria-label="View Portfolio Projects">
+							View Portfolio Projects
+						</Link>
+					</motion.div>
+					<motion.div
 						whileHover={{ scale: 1.07 }}
 						whileTap={{ scale: 0.97 }}
-						href="/contact"
-						style={{
-							...ctaBtnAlt,
-							color: "#0ea5e9",
-							border: "2px solid #0ea5e9",
-							outline: "2px solid transparent",
-							minWidth: 120,
-							width: "100%",
-							textAlign: "center",
-							boxShadow: "none",
-							marginBottom: 6,
-						}}
-						className="transition-colors duration-200 hover:bg-blue-50 focus:outline-blue-400 mb-2 sm:mb-0"
-						aria-label="Contact Me">
-						Contact Me
-					</motion.a>
+						style={{ width: "100%", marginBottom: 6 }}>
+						<Link
+							to="/contact"
+							style={{
+								...ctaBtnAlt,
+								color: "#0ea5e9",
+								border: "2px solid #0ea5e9",
+								outline: "2px solid transparent",
+								minWidth: 120,
+								width: "100%",
+								textAlign: "center",
+								boxShadow: "none",
+								padding: "12px 28px",
+								textDecoration: "none",
+							}}
+							aria-label="Contact Me">
+							Contact Me
+						</Link>
+					</motion.div>
 					<motion.a
 						whileHover={{ scale: 1.07 }}
 						whileTap={{ scale: 0.97 }}
