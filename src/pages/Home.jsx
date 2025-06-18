@@ -148,20 +148,19 @@ const Home = () => {
 						...ctaRow,
 						flexDirection: "column",
 						alignItems: "center",
-						gap: 12,
+						gap: 10,
 						width: "100%",
 						maxWidth: 340,
 						margin: "0 auto 8px auto",
+						padding: 0,
 					}}
-					className="flex flex-col gap-3 w-full max-w-xs mx-auto mb-2">
-					{/* Use Link for internal navigation to prevent 404 on static hosts */}
-					<motion.div
-						whileHover={{ scale: 1.07 }}
-						whileTap={{ scale: 0.97 }}
-						style={{ width: "100%" }}>
+					className="flex flex-col gap-2 w-full max-w-xs mx-auto mb-2">
+					{/* Each button is a block element, no margin collapse, no overlap */}
+					<motion.div style={{ width: "100%" }}>
 						<Link
 							to="/projects"
 							style={{
+								display: "block",
 								...ctaBtn,
 								background: "linear-gradient(90deg, #38bdf8 0%, #0ea5e9 100%)",
 								color: "#fff",
@@ -170,20 +169,19 @@ const Home = () => {
 								width: "100%",
 								textAlign: "center",
 								boxShadow: "none",
-								padding: "12px 28px",
+								padding: "12px 0",
 								textDecoration: "none",
+								borderRadius: 8,
 							}}
 							aria-label="View Portfolio Projects">
 							View Portfolio Projects
 						</Link>
 					</motion.div>
-					<motion.div
-						whileHover={{ scale: 1.07 }}
-						whileTap={{ scale: 0.97 }}
-						style={{ width: "100%" }}>
+					<motion.div style={{ width: "100%" }}>
 						<Link
 							to="/contact"
 							style={{
+								display: "block",
 								...ctaBtnAlt,
 								color: "#0ea5e9",
 								border: "2px solid #0ea5e9",
@@ -191,8 +189,9 @@ const Home = () => {
 								width: "100%",
 								textAlign: "center",
 								boxShadow: "none",
-								padding: "12px 28px",
+								padding: "12px 0",
 								textDecoration: "none",
+								borderRadius: 8,
 							}}
 							aria-label="Contact Me">
 							Contact Me
@@ -205,6 +204,7 @@ const Home = () => {
 						target="_blank"
 						rel="noopener noreferrer"
 						style={{
+							display: "block",
 							...ctaBtnAlt,
 							color: "#0ea5e9",
 							border: "2px solid #0ea5e9",
@@ -212,9 +212,10 @@ const Home = () => {
 							width: "100%",
 							textAlign: "center",
 							boxShadow: "none",
-							padding: "12px 28px",
+							padding: "12px 0",
 							marginBottom: 0,
 							textDecoration: "none",
+							borderRadius: 8,
 						}}
 						className="transition-colors duration-200 hover:bg-blue-50 hover:text-blue-700 focus:outline-blue-400"
 						aria-label="View CV">
@@ -227,6 +228,7 @@ const Home = () => {
 						target="_blank"
 						rel="noopener noreferrer"
 						style={{
+							display: "block",
 							...ctaBtnAlt,
 							color: "#0ea5e9",
 							border: "2px solid #0ea5e9",
@@ -234,9 +236,10 @@ const Home = () => {
 							width: "100%",
 							textAlign: "center",
 							boxShadow: "none",
-							padding: "12px 28px",
+							padding: "12px 0",
 							marginBottom: 0,
 							textDecoration: "none",
+							borderRadius: 8,
 						}}
 						className="transition-colors duration-200 hover:bg-blue-50 hover:text-blue-700 focus:outline-blue-400"
 						aria-label="View Cover Letter">
@@ -456,14 +459,30 @@ const Home = () => {
 							Tailwind CSS. Features an animated hero, clean design, and
 							accessible layout.
 						</p>
-						<a
-							href="/projects"
-							className="inline-flex items-center gap-2 px-5 py-2 bg-blue-600 text-white rounded shadow hover:bg-blue-700 transition-all text-sm font-semibold relative overflow-hidden group"
-							aria-label="View Projects">
+						{/* Use Link for SPA navigation */}
+						<Link
+							to="/projects"
+							style={{
+								display: "inline-flex",
+								alignItems: "center",
+								gap: 8,
+								padding: "8px 20px",
+								background: "#0ea5e9",
+								color: "#fff",
+								borderRadius: 8,
+								fontWeight: 600,
+								fontSize: 15,
+								textDecoration: "none",
+								boxShadow: "none",
+								marginTop: 4,
+								marginBottom: 0,
+								transition: "background 0.2s, color 0.2s",
+							}}
+							aria-label="View Projects"
+							className="hover:bg-blue-700 focus:bg-blue-800">
 							<FaReact className="inline-block text-lg mb-0.5 animate-spin-slow" />
-							<span className="relative z-10">View Projects</span>
-							<span className="absolute left-0 top-0 w-full h-full bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-400 opacity-0 group-hover:opacity-20 transition-all duration-300 animate-shine"></span>
-						</a>
+							<span>View Projects</span>
+						</Link>
 					</motion.div>
 					<motion.div
 						initial={{ opacity: 0, x: 30 }}
@@ -506,11 +525,25 @@ const Home = () => {
 									<circle cx="80" cy="70" r="10" fill="#38bdf8" />
 								</svg>
 								<div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-400/30 to-cyan-200/20 opacity-0 group-hover:opacity-80 transition-all duration-300 flex items-center justify-center">
-									<a
-										href="/projects"
-										className="px-4 py-2 bg-white/90 text-blue-700 rounded shadow font-semibold hover:bg-blue-50 transition-all animate-pulse">
+									{/* Use Link for SPA navigation */}
+									<Link
+										to="/projects"
+										style={{
+											padding: "10px 24px",
+											background: "#fff",
+											color: "#0ea5e9",
+											borderRadius: 8,
+											fontWeight: 700,
+											fontSize: 15,
+											textDecoration: "none",
+											boxShadow: "none",
+											border: "2px solid #0ea5e9",
+											transition: "background 0.2s, color 0.2s",
+										}}
+										className="hover:bg-blue-50 hover:text-blue-700 focus:outline-blue-400"
+										aria-label="View Live">
 										View Live
-									</a>
+									</Link>
 								</div>
 							</motion.div>
 						</div>
