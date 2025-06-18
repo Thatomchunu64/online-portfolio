@@ -65,33 +65,35 @@ const Home = () => {
 				background:
 					"linear-gradient(270deg, #e0f2fe, #bae6fd 60%, #0ea5e9 100%)",
 				minHeight: "100vh",
-				paddingTop: 60,
-				paddingLeft: 8,
-				paddingRight: 8,
+				paddingTop: 32,
+				paddingLeft: 4,
+				paddingRight: 4,
 			}}>
-			{/* Responsive hero card container */}
+			{/* Responsive hero card container with mobile adjustments */}
 			<motion.div
 				style={{
 					...heroCard,
-					padding: "32px 14px",
+					padding: "20px 6px",
 					maxWidth: 650,
 					fontFamily: "Inter, sans-serif",
 					background: "#fff",
-					borderRadius: 18,
+					borderRadius: 14,
 					width: "100%",
 					boxSizing: "border-box",
 					margin: "0 auto",
+					boxShadow: "none", // Ensure no shadow
+					border: "none", // Ensure no border
 				}}
 				initial={{ opacity: 0, y: 40 }}
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 0.7 }}
 				className="w-full">
-				{/* Main heading */}
+				{/* Main heading with mobile font size */}
 				<h1
 					style={{
 						fontFamily: "Poppins, sans-serif",
 						fontWeight: 900,
-						fontSize: 44,
+						fontSize: "clamp(2.1rem, 7vw, 2.7rem)",
 						letterSpacing: 1,
 						color: "#111",
 						marginBottom: 8,
@@ -100,12 +102,12 @@ const Home = () => {
 					}}>
 					Hi, I'm Thato Mchunu
 				</h1>
-				{/* Typewriter subheading */}
+				{/* Typewriter subheading with mobile font size */}
 				<h2
 					style={{
 						fontFamily: "Poppins, sans-serif",
 						fontWeight: 700,
-						fontSize: 26,
+						fontSize: "clamp(1.1rem, 4vw, 1.7rem)",
 						color: "#0ea5e9",
 						marginBottom: 8,
 						letterSpacing: 0.5,
@@ -129,7 +131,7 @@ const Home = () => {
 				{/* Description */}
 				<p
 					style={{
-						fontSize: 19,
+						fontSize: "clamp(1rem, 3.5vw, 1.2rem)",
 						color: "#222",
 						marginBottom: 8,
 						lineHeight: 1.5,
@@ -139,18 +141,18 @@ const Home = () => {
 					Full-stack developer crafting elegant web apps with clean UI &
 					seamless UX.
 				</p>
-				{/* Responsive action buttons row */}
+				{/* Responsive action buttons row with tighter spacing */}
 				<motion.div
 					style={{
 						...ctaRow,
 						flexDirection: "column",
 						alignItems: "center",
-						gap: 12,
+						gap: 8,
 						width: "100%",
 						maxWidth: 400,
 						margin: "0 auto",
 					}}
-					className="flex flex-col sm:flex-row flex-wrap gap-3 justify-center items-center w-full max-w-xl mx-auto mb-2">
+					className="flex flex-col sm:flex-row flex-wrap gap-2 justify-center items-center w-full max-w-xl mx-auto mb-2">
 					{/* Each button is full width on mobile, inline on desktop */}
 					<motion.a
 						whileHover={{ scale: 1.07 }}
@@ -162,11 +164,11 @@ const Home = () => {
 							color: "#fff",
 							border: "none",
 							outline: "2px solid transparent",
-							minWidth: 180,
+							minWidth: 120,
 							width: "100%",
 							textAlign: "center",
 							boxShadow: "none",
-							marginBottom: 8,
+							marginBottom: 6,
 						}}
 						className="transition-colors duration-200 hover:bg-blue-700 focus:outline-blue-400 mb-2 sm:mb-0"
 						aria-label="View Portfolio Projects">
@@ -181,11 +183,11 @@ const Home = () => {
 							color: "#0ea5e9",
 							border: "2px solid #0ea5e9",
 							outline: "2px solid transparent",
-							minWidth: 180,
+							minWidth: 120,
 							width: "100%",
 							textAlign: "center",
 							boxShadow: "none",
-							marginBottom: 8,
+							marginBottom: 6,
 						}}
 						className="transition-colors duration-200 hover:bg-blue-50 focus:outline-blue-400 mb-2 sm:mb-0"
 						aria-label="Contact Me">
@@ -202,11 +204,11 @@ const Home = () => {
 							color: "#0ea5e9",
 							border: "2px solid #0ea5e9",
 							outline: "2px solid transparent",
-							minWidth: 180,
+							minWidth: 120,
 							width: "100%",
 							textAlign: "center",
 							boxShadow: "none",
-							marginBottom: 8,
+							marginBottom: 6,
 						}}
 						className="transition-colors duration-200 hover:bg-blue-50 hover:text-blue-700 focus:outline-blue-400 mb-2 sm:mb-0"
 						aria-label="View CV">
@@ -223,7 +225,7 @@ const Home = () => {
 							color: "#0ea5e9",
 							border: "2px solid #0ea5e9",
 							outline: "2px solid transparent",
-							minWidth: 180,
+							minWidth: 120,
 							width: "100%",
 							textAlign: "center",
 							boxShadow: "none",
