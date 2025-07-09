@@ -179,28 +179,22 @@ const Contact = () => {
 						flexWrap: "wrap",
 					}}>
 					<a
-						href="https://github.com/yourname"
+						href="https://github.com/IvarRotg64"
 						target="_blank"
 						rel="noopener noreferrer"
 						style={{ color: "#222", fontSize: 28 }}>
 						<FaGithub />
 					</a>
 					<a
-						href="https://linkedin.com/in/yourname"
+						href="https://www.linkedin.com/in/thato-mchunu-42b053308"
 						target="_blank"
 						rel="noopener noreferrer"
 						style={{ color: "#0A66C2", fontSize: 28 }}>
 						<FaLinkedin />
 					</a>
+
 					<a
-						href="https://twitter.com/yourname"
-						target="_blank"
-						rel="noopener noreferrer"
-						style={{ color: "#1DA1F2", fontSize: 28 }}>
-						<FaTwitter />
-					</a>
-					<a
-						href="https://wa.me/yourwhatsappphonenumber"
+						href="https://wa.me/27782764255"
 						target="_blank"
 						rel="noopener noreferrer"
 						style={{ color: "#25D366", fontSize: 28 }}
