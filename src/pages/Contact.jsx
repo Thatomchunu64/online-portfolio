@@ -8,6 +8,7 @@ import { heroSection, gradientKeyframes } from "./style";
 
 const Contact = () => {
 	const [form, setForm] = useState({ name: "", email: "", message: "" });
+	const [loading, setLoading] = useState(false); // <-- loading state added
 
 	const handleChange = (e) => {
 		setForm({ ...form, [e.target.name]: e.target.value });
@@ -15,6 +16,7 @@ const Contact = () => {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
+		setLoading(true); // <-- disable button
 
 		try {
 			const response = await fetch("https://formspree.io/f/mnnvevjd", {
@@ -26,7 +28,7 @@ const Contact = () => {
 			});
 
 			if (response.ok) {
-				toast.success("✅ Message sent successfully!");
+				toast.success("Message sent successfully!");
 				setForm({ name: "", email: "", message: "" });
 			} else {
 				toast.error("❌ Failed to send message. Please try again.");
@@ -34,6 +36,8 @@ const Contact = () => {
 		} catch (error) {
 			console.error(error);
 			toast.warning("⚠️ Network error. Please try again later.");
+		} finally {
+			setLoading(false); // <-- re-enable button
 		}
 	};
 
@@ -160,8 +164,11 @@ const Contact = () => {
 					/>
 					<button
 						type="submit"
+						disabled={loading} // disable while loading
 						style={{
-							background: "linear-gradient(90deg, #38bdf8 0%, #0ea5e9 100%)",
+							background: loading
+								? "#9dd2f4"
+								: "linear-gradient(90deg, #38bdf8 0%, #0ea5e9 100%)",
 							color: "#fff",
 							fontWeight: 700,
 							fontSize: 16,
@@ -169,11 +176,11 @@ const Contact = () => {
 							borderRadius: 8,
 							border: "none",
 							marginTop: 6,
-							cursor: "pointer",
+							cursor: loading ? "not-allowed" : "pointer",
 							width: "100%",
 							boxSizing: "border-box",
 						}}>
-						Send Message
+						{loading ? "Sending..." : "Send Message"}
 					</button>
 				</form>
 
