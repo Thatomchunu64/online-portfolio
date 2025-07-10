@@ -4,7 +4,7 @@
     "image": "/images/E-Commerce.jpg",
     "description": "A full-featured e-commerce web app with shopping cart, payments, about-section,contacts,etc.",
     "tech": ["React", "Node.js", "MongoDB"],
-    "live": "https://your-ecommerce-demo.com"
+    "live": "https://ivarrotg64.github.io/dlc/"
   },
   {
     "title": "Landing Page",

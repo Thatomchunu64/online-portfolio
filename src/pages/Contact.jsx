@@ -1,18 +1,10 @@
 /** @format */
 
-import React, { useState } from "react";
-import { FaGithub, FaLinkedin, FaTwitter, FaWhatsapp } from "react-icons/fa";
-// eslint-disable-next-line no-unused-vars
-import { heroSection, heroCard, gradientKeyframes } from "./style";
-
-/**
- * Contact.jsx
- * Responsive contact page for Thato Mchunu's portfolio.
- * - Modern, animated, and mobile-friendly.
- * - Uses inline styles and shared style.js for consistency.
- * - All layout and form elements adapt to mobile and desktop.
- * - Well-commented for maintainability.
- */
+import React, { useState, useEffect } from "react";
+import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { heroSection, gradientKeyframes } from "./style";
 
 const Contact = () => {
 	const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -21,14 +13,31 @@ const Contact = () => {
 		setForm({ ...form, [e.target.name]: e.target.value });
 	};
 
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
-		alert("Message sent! (Demo)");
-		setForm({ name: "", email: "", message: "" });
+
+		try {
+			const response = await fetch("https://formspree.io/f/mnnvevjd", {
+				method: "POST",
+				headers: {
+					Accept: "application/json",
+				},
+				body: new FormData(e.target),
+			});
+
+			if (response.ok) {
+				toast.success("✅ Message sent successfully!");
+				setForm({ name: "", email: "", message: "" });
+			} else {
+				toast.error("❌ Failed to send message. Please try again.");
+			}
+		} catch (error) {
+			console.error(error);
+			toast.warning("⚠️ Network error. Please try again later.");
+		}
 	};
 
-	React.useEffect(() => {
-		// Inject keyframes for animated gradient background
+	useEffect(() => {
 		const style = document.createElement("style");
 		style.innerHTML = gradientKeyframes;
 		document.head.appendChild(style);
@@ -49,7 +58,7 @@ const Contact = () => {
 				paddingRight: 8,
 			}}
 			className="px-2 sm:px-4 md:px-8 lg:px-0">
-			{/* Responsive contact card container */}
+			<ToastContainer position="top-center" />
 			<div
 				style={{
 					background: "rgba(255,255,255,0.85)",
@@ -59,9 +68,7 @@ const Contact = () => {
 					padding: "32px 16px",
 					width: "100%",
 					boxSizing: "border-box",
-				}}
-				className="w-full">
-				{/* Main heading */}
+				}}>
 				<h2
 					style={{
 						fontFamily: "Poppins, sans-serif",
@@ -85,7 +92,7 @@ const Contact = () => {
 					Let's connect! Whether you have a project, question, or just want to
 					say hi, my inbox is always open.
 				</p>
-				{/* Responsive contact form */}
+
 				<form
 					onSubmit={handleSubmit}
 					style={{
@@ -169,7 +176,7 @@ const Contact = () => {
 						Send Message
 					</button>
 				</form>
-				{/* Social icons row, responsive */}
+
 				<div
 					style={{
 						display: "flex",
@@ -192,7 +199,6 @@ const Contact = () => {
 						style={{ color: "#0A66C2", fontSize: 28 }}>
 						<FaLinkedin />
 					</a>
-
 					<a
 						href="https://wa.me/27782764255"
 						target="_blank"
