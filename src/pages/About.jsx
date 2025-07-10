@@ -80,7 +80,6 @@ const About = () => {
 						height: 110,
 						borderRadius: "50%",
 						objectFit: "cover",
-						objectPosition: "center",
 						border: "4px solid #0ea5e9",
 						marginBottom: 20,
 						boxShadow: "0 4px 24px #0ea5e933",

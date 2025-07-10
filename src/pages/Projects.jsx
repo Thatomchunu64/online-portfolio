@@ -11,18 +11,8 @@ const techColors = {
 	Tailwind: "#06b6d4",
 };
 
-/**
- * Projects.jsx
- * Responsive projects gallery for Thato Mchunu's portfolio.
- * - Modern, animated, and mobile-friendly.
- * - Uses inline styles and shared style.js for consistency.
- * - All layout and cards adapt to mobile and desktop.
- * - Well-commented for maintainability.
- */
-
 const Projects = () => {
 	useEffect(() => {
-		// Inject keyframes for animated gradient background
 		const style = document.createElement("style");
 		style.innerHTML = gradientKeyframes;
 		document.head.appendChild(style);
@@ -48,7 +38,6 @@ const Projects = () => {
 				paddingLeft: 8,
 				paddingRight: 8,
 			}}>
-			{/* Main heading, responsive */}
 			<h2
 				style={{
 					fontFamily: "Poppins, sans-serif",
@@ -62,7 +51,7 @@ const Projects = () => {
 				}}>
 				Projects
 			</h2>
-			{/* Responsive cards row */}
+
 			<div
 				style={{
 					display: "flex",
@@ -90,7 +79,7 @@ const Projects = () => {
 							animation: `fadeInUp 0.7s ${0.1 + idx * 0.1}s both`,
 							boxSizing: "border-box",
 						}}>
-						{/* Project image, responsive */}
+						{/* Project image from JSON */}
 						<img
 							src={project.image}
 							alt={project.title}
@@ -104,7 +93,8 @@ const Projects = () => {
 								background: "#e0f2fe",
 							}}
 						/>
-						{/* Project title */}
+
+						{/* Title */}
 						<h3
 							style={{
 								color: "#0ea5e9",
@@ -115,7 +105,8 @@ const Projects = () => {
 							}}>
 							{project.title}
 						</h3>
-						{/* Project description */}
+
+						{/* Description */}
 						<p
 							style={{
 								color: "#222",
@@ -125,7 +116,8 @@ const Projects = () => {
 							}}>
 							{project.description}
 						</p>
-						{/* Tech badges row, responsive */}
+
+						{/* Tech stack badges */}
 						<div
 							style={{
 								display: "flex",
@@ -150,13 +142,12 @@ const Projects = () => {
 								</span>
 							))}
 						</div>
-						{/* Action buttons row, responsive */}
+
+						{/* Only live button */}
 						<div
 							style={{
 								display: "flex",
-								gap: 10,
 								justifyContent: "center",
-								flexWrap: "wrap",
 								width: "100%",
 							}}>
 							<a
@@ -180,53 +171,11 @@ const Projects = () => {
 								}}>
 								Live
 							</a>
-							<a
-								href={project.githubFrontend}
-								target="_blank"
-								rel="noopener noreferrer"
-								style={{
-									background: "#fff",
-									color: "#0ea5e9",
-									fontWeight: 700,
-									fontSize: 14,
-									padding: "8px 16px",
-									borderRadius: 7,
-									textDecoration: "none",
-									border: "2px solid #0ea5e9",
-									boxShadow: "none",
-									transition: "background 0.2s, color 0.2s, transform 0.2s",
-									marginBottom: 4,
-									width: 100,
-								}}>
-								Frontend
-							</a>
-							{project.githubBackend && (
-								<a
-									href={project.githubBackend}
-									target="_blank"
-									rel="noopener noreferrer"
-									style={{
-										background: "#fff",
-										color: "#0ea5e9",
-										fontWeight: 700,
-										fontSize: 14,
-										padding: "8px 16px",
-										borderRadius: 7,
-										textDecoration: "none",
-										border: "2px solid #0ea5e9",
-										boxShadow: "none",
-										transition: "background 0.2s, color 0.2s, transform 0.2s",
-										marginBottom: 4,
-										width: 100,
-									}}>
-									Backend
-								</a>
-							)}
 						</div>
 					</div>
 				))}
 			</div>
-			{/* Fade-in animation keyframes */}
+
 			<style>{`
         @keyframes fadeInUp {
           0% { opacity: 0; transform: translateY(40px); }

@@ -1,19 +1,16 @@
 [
   {
     "title": "E-Commerce Store",
-    "image": "/public/images/ecommerce.png",
-    "description": "A full-featured e-commerce web app with shopping cart, payments, and admin dashboard.",
-    "tech": ["React", "Node.js", "MongoDB", "Tailwind"],
-    "live": "https://your-ecommerce-demo.com",
-    "githubFrontend": "https://github.com/yourname/ecommerce-frontend",
-    "githubBackend": "https://github.com/yourname/ecommerce-backend"
+    "image": "/images/E-Commerce.jpg",
+    "description": "A full-featured e-commerce web app with shopping cart, payments, about-section,contacts,etc.",
+    "tech": ["React", "Node.js", "MongoDB"],
+    "live": "https://your-ecommerce-demo.com"
   },
   {
     "title": "Landing Page",
-    "image": "/public/images/landing.png",
+    "image": "/images/landing.png",
     "description": "A modern, responsive landing page for a SaaS product.",
-    "tech": ["React", "Tailwind"],
-    "live": "https://your-landing-demo.com",
-    "githubFrontend": "https://github.com/yourname/landing-page"
+    "tech": ["React", "Bootstrap"],
+    "live": "https://your-landing-demo.com"
   }
 ]

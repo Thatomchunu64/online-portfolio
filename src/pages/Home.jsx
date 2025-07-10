@@ -455,8 +455,8 @@ const Home = () => {
 							E-Commerce Store
 						</h3>
 						<p className="text-gray-700 text-base mb-3">
-							A full-featured e-commerce web app with shopping cart, payments,
-							and admin dashboard.
+							A full-featured e-commerce web app with shopping cart,
+							payments,about,contacts,etc.
 						</p>
 						<Link
 							to="/projects"
