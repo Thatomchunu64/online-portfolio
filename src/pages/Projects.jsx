@@ -176,6 +176,41 @@ const Projects = () => {
 				))}
 			</div>
 
+			{/* View All Projects Button */}
+			<div
+				style={{
+					marginTop: 32,
+					display: "flex",
+					justifyContent: "center",
+					width: "100%",
+				}}>
+				<a
+					href="https://github.com/hyperiondev-bootcamps/TH25020017412"
+					target="_blank"
+					rel="noopener noreferrer"
+					style={{
+						background: "linear-gradient(90deg, #2563eb 0%, #3b82f6 100%)",
+						color: "#fff",
+						fontWeight: 700,
+						fontSize: 16,
+						padding: "12px 28px",
+						borderRadius: 10,
+						textDecoration: "none",
+						boxShadow: "0 4px 12px rgba(59,130,246,0.6)",
+						transition: "background 0.3s ease",
+					}}
+					onMouseEnter={(e) =>
+						(e.currentTarget.style.background =
+							"linear-gradient(90deg, #3b82f6 0%, #2563eb 100%)")
+					}
+					onMouseLeave={(e) =>
+						(e.currentTarget.style.background =
+							"linear-gradient(90deg, #2563eb 0%, #3b82f6 100%)")
+					}>
+					See Full Project Portfolio on GitHub
+				</a>
+			</div>
+
 			<style>{`
         @keyframes fadeInUp {
           0% { opacity: 0; transform: translateY(40px); }
