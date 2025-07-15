@@ -193,7 +193,7 @@ const Contact = () => {
 						flexWrap: "wrap",
 					}}>
 					<a
-						href="https://github.com/IvarRotg64"
+						href="https://github.com/Thatomchunu64"
 						target="_blank"
 						rel="noopener noreferrer"
 						style={{ color: "#222", fontSize: 28 }}>

@@ -563,7 +563,7 @@ const Home = () => {
 							Back to Top
 						</a>
 						<a
-							href="https://github.com/yourname"
+							href="https://github.com/Thatomchunu64"
 							target="_blank"
 							rel="noopener noreferrer"
 							aria-label="GitHub"
@@ -577,7 +577,7 @@ const Home = () => {
 							<FaGithub />
 						</a>
 						<a
-							href="https://linkedin.com/in/yourname"
+							href="https://www.linkedin.com/in/thato-mchunu-42b053308"
 							target="_blank"
 							rel="noopener noreferrer"
 							aria-label="LinkedIn"
